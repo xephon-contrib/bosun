@@ -215,7 +215,7 @@ func (e ESQuery) MarshalJSON() ([]byte, error) {
 
 type ESIndexer struct {
 	TimeField string
-	Generate  func(startDuration, endDuration *time.Time) ([]string, error)
+	Generate  func(startDuration, endDuration *time.Time) ([]string)
 }
 
 func (e ESIndexer) Type() models.FuncType { return models.TypeESIndexer }
