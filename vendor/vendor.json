@@ -878,18 +878,18 @@
 		},
 		{
 			"path": "gopkg.in/olivere/elastic.v3",
-			"revision": "eaecbad7a83e6b60f131825553e5eb7fd5a50b41",
-			"revisionTime": "2016-10-01T14:34:41+02:00"
+			"revision": "1ad75b5396674e9c783400e89106bc0c8da9d786",
+			"revisionTime": "2016-10-16T12:21:59+02:00"
 		},
 		{
 			"path": "gopkg.in/olivere/elastic.v3/backoff",
-			"revision": "bff1355ba593686c7bfc1abb7a8573f34a9c29d1",
-			"revisionTime": "2016-04-04T08:40:41+02:00"
+			"revision": "1ad75b5396674e9c783400e89106bc0c8da9d786",
+			"revisionTime": "2016-10-16T12:21:59+02:00"
 		},
 		{
 			"path": "gopkg.in/olivere/elastic.v3/uritemplates",
-			"revision": "bff1355ba593686c7bfc1abb7a8573f34a9c29d1",
-			"revisionTime": "2016-04-04T08:40:41+02:00"
+			"revision": "1ad75b5396674e9c783400e89106bc0c8da9d786",
+			"revisionTime": "2016-10-16T12:21:59+02:00"
 		},
 		{
 			"path": "gopkg.in/yaml.v1",
