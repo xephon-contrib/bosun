@@ -270,8 +270,20 @@ func (e ElasticHosts) Query(r *ElasticRequest) (*elastic.SearchResult, error) {
 		return nil, err
 	}
 	s.Index(r.Indices...)
+	// With IgnoreUnavailable there can be gaps in the indices (i.e. missing days) and we will not error
+	// If no indices match than there will be no successful shards and and error is returned in that case
 	s.IgnoreUnavailable(true)
-	return s.SearchSource(r.Source).Do()
+	res, err := s.SearchSource(r.Source).Do()
+	if err != nil {
+		return nil, err
+	}
+	if (res.Shards == nil) {
+		return nil, fmt.Errorf("no shard info in reply, should not be here please file issue")
+	}
+	if (res.Shards.Successful == 0) {
+		return nil, fmt.Errorf("no successful shards in result, perhaps the index does exist, total shards: %v, failed shards: %v", res.Shards.Total, res.Shards.Failed)
+	}
+	return res, nil
 }
 
 // ElasticRequest is a container for the information needed to query elasticsearch or a date
